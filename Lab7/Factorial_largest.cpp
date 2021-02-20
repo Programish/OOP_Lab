@@ -54,7 +54,7 @@ class D:public B,public C{
 		}
 };
 int main(){
-	D a(12,70,10);
+	D a(12,700,10);
 	a.compare();
 	a.display();
 	return 0;
