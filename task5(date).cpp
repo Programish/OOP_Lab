@@ -24,7 +24,7 @@ class Date {
         day++;
 
         if (day > daysOfMonth(month, year)) {
-            day = daysOfMonth(month, year);
+      //      day = daysOfMonth(month, year);
             day++;
             month++;
         }
