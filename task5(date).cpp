@@ -20,20 +20,22 @@ class Date {
             ++year;
         }
     }
-    void post_increment() {
+    Date* post_increment() {
+        
         day++;
-
-        if (day > daysOfMonth(month, year)) {
-            day = daysOfMonth(month, year);
-            day++;
+        Date *trivial;
+        if (this->day > daysOfMonth(month, year)) {
+            trivial->day = 1;
             month++;
         }
 
         if (month > 12) {
-            month = this->month;
-            month++;
-            year++;
+            trivial->month = 1;
         }
+        
+        year++;
+        
+        return trivial;
     }
 
     public:
@@ -46,10 +48,10 @@ class Date {
         return Date(*this);
     }
 
-    Date operator ++ (int) {  // postfix
+    Date operator ++ (Date *obj) {  // postfix
         Date retdate(*this);
-        post_increment();
-        return retdate;
+        retdate = post_increment();
+        return retdate; 
     }
 
     void read() {
