@@ -24,7 +24,7 @@ class Date {
     }
   }
 
-  Date post_increment(Date obj) {
+  Date post_increment(Date& obj) {
     Date trivial = obj;
     trivial.day++;
 
@@ -38,6 +38,12 @@ class Date {
       trivial.year = obj.year;
       trivial.year++;
     }
+
+    Date temp;
+    temp = obj;
+
+    obj = trivial;
+    trivial = temp;
 
     return trivial;
   }
